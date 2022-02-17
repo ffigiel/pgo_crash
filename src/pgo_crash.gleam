@@ -4,7 +4,8 @@ import gleam/option
 import gleam/io
 
 pub fn main() {
-  let db = pgo.connect(pgo.default_config())
+  let config = pgo.default_config()
+  let db = pgo.connect(config)
 
   let sql = "select 1;"
   let return_type = fn(a: dynamic.Dynamic) -> Result(
@@ -15,5 +16,6 @@ pub fn main() {
     Ok("")
   }
 
-  assert Ok(_) = pgo.execute(sql, db, [], return_type)
+  pgo.execute(sql, db, [], return_type)
+  |> io.debug
 }

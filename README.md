@@ -1,5 +1,5 @@
-There is a bug in `gleam_pgo` library. If you run `gleam run`, it will fail with the following
-message. You don't need to have a database running to reproduce this error.
+There is a bug in `gleam_pgo` library. If you run `reproduce.sh`, it will fail with the following
+message.
 
 ```
 exception error: no function clause matching
