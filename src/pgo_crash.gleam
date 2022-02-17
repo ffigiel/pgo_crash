@@ -4,7 +4,8 @@ import gleam/option
 import gleam/io
 
 pub fn main() {
-  let config = pgo.default_config()
+  let config =
+    pgo.Config(..pgo.default_config(), password: option.Some("gleam"))
   let db = pgo.connect(config)
 
   let sql = "select 1;"
